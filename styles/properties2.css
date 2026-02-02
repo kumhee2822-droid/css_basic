@@ -1,0 +1,43 @@
+body {}
+.wrap {
+    text-align: center;
+    width: 402px;
+    height: 100vh;
+    background-color: rgb(211, 252, 255);
+    padding: 20px 15px;
+    margin: 0 auto;
+}
+/* 그룹선택자 (,) 기준으로 뒤 선택자 RESET, 부모부터 다시쓰기 */
+.wrap h2,
+.wrap h3 {
+    font-size: 1.50em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+/* 인접형제 선택자를 이용한 p선택 방법 + 그룹(,) */
+.wrap h2+p,
+.wrap h3+p {}
+.wrap h2+p em {
+    color: red;
+}
+/* 수열선택자를 이용한 p 선택방법 + 그룹(,) */
+.wrap p:nth-child(2),
+.wrap p:nth-child(5) {
+    font-size: 0.75em;
+    margin: 15px 0;
+}
+.wrap p:nth-child(2) em {}
+.wrap p {}
+.wrap #content {
+    font-size: 1.0em;
+    margin: 0 0 30px;
+}
+.wrap #content span {
+    background-color: greenyellow;
+}
+.wrap h3 {}
+.wrap .details {
+    font-size: 16px;
+}
+.wrap .details em {text-decoration: underline;} 
