@@ -92,3 +92,16 @@
     * `window.location.href='실행주소'`
         * (위)`a href="실행주소"`와 동일한 js 명령어
     * `button:hover {}` : 버튼에 마우스 올렸을 시 디자인 변경
+## CSS 레이아웃 정렬 속성
+### display
+* `display:block` : 인라인을 수직으로 나열
+* `display:inline-block` : 블록을 수평으로 나열
+    * 기본 여백 3px 발생 -> 해결법 `margin-right:-3px`
+### margin
+* `margin:상하여백 auto` : 크기가 설정된 블록 또는 인라인을 화면 가운데 배치
+### float
+* `float:left` : 형제요소들을 왼쪽으로 순차정렬
+* `float:right` : 형제요소들을 오른쪽으로 정렬
+    * 2개 이상 작성 시 역순으로 정렬됨
+* `float:none` : float 제거
+* `clear:both` : 이전 형제에 작성된 float 정렬해제
