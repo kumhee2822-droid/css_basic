@@ -1,0 +1,258 @@
+#new_wrap {
+    background-color: lightgray;
+    width: 1200px; margin: 0 auto;
+}
+#new_wrap > h1 {
+    width: 860px; margin: 0 auto;
+}
+#new_wrap #new_slide_wrap {
+    background-color: lightpink;
+    width: 860px; margin: 0 auto;
+    overflow: hidden;
+    /* absolute 부모기준설정 */
+    position: relative; 
+}
+#new_wrap #new_slide_wrap .new_slides {
+    background-color: lightskyblue;
+    /* float 적용 전 자식 높이를 인식해서 자동으로 따라오는 부모 */
+    /* float 적용 후 부유한 자식 요소들로 인해 높이 인식 불가 부모 */
+    /* 위 문제 해결법 -> 넘친 자식 요소들 재인식 시키기 */
+    overflow: hidden;
+    /* 자식요소의 전체 너비 설정 */
+    /* width: max-content; */
+    width: calc(860px*4); /* calc계산기함수사용, 연산자 좌우여백 필수 */
+}
+#new_wrap #new_slide_wrap .new_slides .slide {
+    border: 3px solid lightsalmon;
+    width: 860px; height: 450px;
+    /* 실제크기가 필요한 주요 요소(자식)한테 높이를 주면 그 부모 요소들은 자동으로 자식과 크기가 같아진다. */
+    float: left;
+}
+#new_wrap #new_slide_wrap .new_slides .slide h1 {}
+#new_wrap #new_slide_wrap .new_slides .slide a {}
+#new_wrap #new_slide_wrap .new_slides .slide1 {}
+#new_wrap #new_slide_wrap .new_slides .slide2 {}
+#new_wrap #new_slide_wrap .new_slides .slide3 {}
+#new_wrap #new_slide_wrap .new_slides .slide4 {}
+#new_wrap #new_slide_wrap .prev {
+    background-color: antiquewhite;
+    /* relative 현재 위치 기준 */
+    /* position: relative; left: 50px; top: -50px; */
+    /* absolute 부모 위치 기준 (기본부모:body) */
+    /* 기준부모 설정은 -> 부모 position 설정 */
+    position: absolute; left: 0; top: 40%;
+}
+#new_wrap #new_slide_wrap .next {
+    position: absolute; right: 0; top: 40%;
+}
+#new_wrap #new_slide_wrap .page {
+    background-color: bisque;
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+}
+#new_wrap #new_slide_wrap .page .current {}
+#new_wrap #new_slide_wrap .page .all {}
+/* 영풍문고 독자들의 선택 ----------------------------*/
+#book_select {
+    width: 1084px;
+    background-color: aliceblue;
+    margin: 0 auto;
+    position: relative;
+}
+#book_select h1 {}
+#book_select #book_slide_wrap {
+    width: 1084px;
+}
+#book_select #book_slide_wrap .slide_wrap {
+    width:calc(340px*3);
+    margin: 0 auto;
+    overflow: hidden;
+}
+#book_select #book_slide_wrap .slide_wrap .slides {
+    width:calc(340px*4);
+}
+#book_select #book_slide_wrap .slide_wrap .slides .slide {
+    width: 340px;
+    height: 472px;
+    display: inline-block;
+    float: left;
+}
+#book_select #book_slide_wrap .slide_wrap .slides .slide .thumnail {
+    height: 324px;
+    background-image: url(../images/bg.jpg);
+    background-size: 324px auto;
+    padding: 20px 15px 0;
+    position: relative;
+}
+#book_select #book_slide_wrap .slide_wrap .slides .slide .thumnail::after {
+    content: '';
+    display: block; height: 100%; width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute; left: 0; top: 0;
+    z-index: 40; 
+}
+#book_select #book_slide_wrap .slide_wrap .slides .slide .thumnail p {
+    color: #fff;
+    line-height: 1.8;
+    z-index: 50; position: relative;
+}
+#book_select #book_slide_wrap .slide_wrap .slides .slide .book_info {
+    height: 148px;
+}
+#book_select #book_slide_wrap .slide_wrap .slides .slide .book_info .cover {
+        float: left;
+        margin-right: 10px;
+        padding: 15px 0 0 15px;
+}
+#book_select #book_slide_wrap .slide_wrap .slides .slide .book_info .cover img {
+    width: 60px;
+}
+#book_select #book_slide_wrap .slide_wrap .slides .slide .book_info dl {
+    float: left;
+    padding-top: 15px;
+    position: relative; /* after를 위한 부모 기준 설정하기 */
+}
+#book_select #book_slide_wrap .slide_wrap .slides .slide .book_info dl::after {
+    content:''; /* 필수! */
+    width: 100%; height: 100%; /* 크기값 적용 */
+    display: block; /* 크기인식 */
+    background-color:rgba(255,255,255, 0.6); /* 반투명색상 */
+    position: absolute; /* 형제요소와 겹치게(부모기준설정) */
+    left: 0; top: 0; /* 위치설정 */
+    z-index: 100; /* 형제관계 중첩순서 설정 */
+}
+#book_select #book_slide_wrap .slide_wrap .slides .slide .book_info dl > * {
+    position: relative; /* z-index 설정하기 위한 준비속성 */
+    z-index: 120; /* 기준 형제보다 작은 값 또는 높은값 작성 */
+}
+#book_select #book_slide_wrap .slide_wrap .slides .slide .book_info dl dt {
+    margin-bottom: 15px;
+}
+#book_select #book_slide_wrap .slide_wrap .slides .slide .book_info dl dd {
+    margin-bottom: 10px;
+}
+#book_select #book_slide_wrap .slide_wrap .slides .slide .book_info dl dd img {}
+#book_select #book_slide_wrap .slide_wrap .slides .slide .book_info dl dd .score {}
+#book_select #book_slide_wrap .slide_wrap .slides .slide .book_info dl .review {}
+#book_select #book_slide_wrap .slide_wrap .slides .slide1 {
+    background-color: aquamarine;
+}
+#book_select #book_slide_wrap .slide_wrap .slides .slide2 {
+    background-color: lawngreen;
+}
+#book_select #book_slide_wrap .slide_wrap .slides .slide3 {
+    background-color: aquamarine;
+}
+#book_select #book_slide_wrap .slide_wrap .slides .slide4 {
+    background-color: lawngreen;
+}
+#book_select #book_slide_wrap #bk_selc_prev,
+#book_select #book_slide_wrap #bk_selc_next {
+    position: absolute;
+    top: 45%;
+}
+#book_select #book_slide_wrap #bk_selc_prev {
+    background-color: antiquewhite;
+    left: 0;
+}
+#book_select #book_slide_wrap #bk_selc_next {
+    background-color: antiquewhite;
+    right: 0; 
+}
+#book_select #book_slide_wrap .pagenation {
+    display: inline-block;
+    width: 1084px;
+    margin: 0 auto;
+    text-align: center;
+}
+#book_select #book_slide_wrap .pagenation a {
+    width: 8px; height: 8px; display: inline-block;
+    background-color: #aaa;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+#book_select #book_slide_wrap .pagenation .active {
+    width: 14px; height: 14px;
+}
+/* 영풍문고 오늘의책---------- */
+#today_book {
+    width: 1084px;
+    margin: 100px auto;
+    background-color: skyblue;
+}
+#today_book .title {
+    background-color: #ffeaea;
+    overflow: hidden; /* 자식 h1, .more의 float로 인한 부모인식 위한 값 */
+    padding: 10px 0;
+}
+#today_book .title h1 {
+    float: left;
+}
+#today_book .title .more {
+    float: right;
+}
+#today_book .contents {
+    overflow: hidden; /* 자식 li의 float적용으로 인해 부모인식을 위한 값 */
+}
+#today_book .contents li {
+    /* 옆으로 배치는 형제관계부터 생각하기 li */
+    float: left;
+    /* width: 193px; */
+    width: calc((100% - (29.7px * 4)) / 5);
+    margin-right: 29.7px;
+}
+#today_book .contents li .thumnail {
+    position: relative;
+}
+/* #today_book .contents li .thumnail::after {
+    content: '';
+    background-color: rgba(0, 0, 0, 0.6);
+    display: block;
+    width: 100%; height: 100%;
+    position: absolute;
+    left: 0; top: 0;
+} */
+#today_book .contents li .thumnail img {
+    /* 부모 li의 너비값이 자식, 자손 블록 기본 100%로 인해 자동적용되는데 img는 인라인으로 자동적용이 안되기 때문에 직접 100%를 입력해서 부모와 너비를 같게 만들어야 한다. */
+    width: 100%;
+}
+/* #today_book .contents li .thumnail .popup {
+    position: absolute;
+    top: 0;
+    z-index: 50;
+    font-size: 0.9rem;
+    padding: 20px 15px 50px;
+    height: 100%;
+} */
+#today_book .contents li .thumnail .popup {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+    padding: 20px;
+}
+#today_book .contents li .thumnail .popup * {
+    color: #fff;
+}
+#today_book .contents li .thumnail .popup > a {
+    display: inline-block;
+    /* height: 85%; */
+    height: calc(100% - 30px);
+    line-height: 1.6;
+}
+
+#today_book .contents li .thumnail .popup .view_cart {
+    position: absolute;
+    bottom: 25px; left: 0; width: 100%;
+    text-align: center;
+}
+#today_book .contents li .thumnail .popup .view_cart a {
+    border: 1px solid #fff;
+    padding: 5px 5px;
+    border-radius: 5px;
+}
+#today_book .contents li .thumnail .popup .view_cart a:nth-child(1) {
+}
+#today_book .contents li .thumnail .popup .view_cart a:nth-child(2) {}
+#today_book .contents li h2 {}
+#today_book .contents li .author {}
+#today_book .contents li:last-child {margin: 0;} /* 여백 초기화 */
