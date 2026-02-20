@@ -1,0 +1,32 @@
+.title {
+    background-color: antiquewhite;
+    width: 350px; margin: 50px auto;
+    /* flex 속성은 정렬하고자 하는 대상의 부모에게 명령시작 */
+    display: flex;
+    /* flex 기본값 메인축(수평)정렬 */
+    /* 메인축 정렬속성 */
+    justify-content: space-between;
+    padding: 0 10px;
+    /* 교차축 정렬 속성(1줄일때) */
+    align-items: center;
+}
+.title h1 {
+    font-size: 1.2rem;
+}
+.title .more {font-size: 0.75rem;}
+.contents {
+    background-color: aquamarine;
+    width: 350px; margin: 0 auto;
+    display: flex;
+    flex-flow: column wrap;
+    /* flex-wrap: wrap;
+    flex-direction:column; */
+    height: calc(50px * 3);
+    align-content:space-between;
+    justify-content:flex-end;
+    /* flax 전용 여백(item사이만 적용) */
+    gap: 10px;
+}
+.contents li {width:calc((100% - 5px) / 4); height: 50px;}
+.contents li:nth-child(odd) {background-color: aqua;}
+.contents li:nth-child(even) {background-color: blanchedalmond;}
